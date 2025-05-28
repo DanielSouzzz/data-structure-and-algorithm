@@ -1,4 +1,25 @@
 package vetor;
 
-public class Vetor {
+// declara uma classe genérica com o tipo T, que permite qualquer tipo de dado seja armazenado
+public class Vetor<T> {
+    private T[] elementos;
+    private int tamanho;
+
+    public Vetor(int capacidade) {
+        // cria um array de Object e converte para T[]
+        this.elementos = (T[]) new Object[capacidade];
+        this.tamanho = 0;
+    }
+
+    // adiciona um elemento ao final da lista
+    public boolean adicionar(T elemento){
+        if (this.tamanho < this.elementos.length){
+            this.elementos[this.tamanho] = elemento;
+            this.tamanho++;
+            return true;
+        } else {
+            return false;
+        }
+}
+
 }
