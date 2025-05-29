@@ -13,6 +13,7 @@ public class Vetor<T> {
 
     // adiciona um elemento ao final da lista
     public boolean adicionar(T elemento){
+        aumentarCapacidade();
         if (this.tamanho < this.elementos.length){
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -20,6 +21,17 @@ public class Vetor<T> {
         } else {
             return false;
         }
+
 }
+
+    private void aumentarCapacidade() {
+        if (this.tamanho >= this.elementos.length){
+            T[] newElementos = (T[]) new Object[this.elementos.length * 2];
+            for (int i=0;i<this.elementos.length; i++){
+                newElementos[i] = this.elementos[i];
+            }
+            this.elementos = newElementos;
+        }
+    }
 
 }
