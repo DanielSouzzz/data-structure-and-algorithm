@@ -23,6 +23,18 @@ public class Vetor<T> {
         }
     }
 
+    // adiciona um elemento em qualquer posicao da lista
+    public boolean adicionar(int index, T elemento) throws IllegalAccessException {
+        aumentarCapacidade();
+        verificarValidadePosicao(index);
+        for (int i = this.tamanho - 1; i>= index; i--){
+            this.elementos[i+1] = this.elementos[i];
+        }
+        this.elementos[index] = elemento;
+        this.tamanho++;
+        return true;
+    }
+
     private void aumentarCapacidade() {
         if (this.tamanho >= this.elementos.length){
             T[] newElementos = (T[]) new Object[this.elementos.length * 2];
@@ -33,8 +45,8 @@ public class Vetor<T> {
         }
     }
 
-    private void verificarValidadePosicao(int posicao) throws IllegalAccessException {
-        if(!(posicao>=0 && posicao < tamanho)){
+    private void verificarValidadePosicao(int index) throws IllegalAccessException {
+        if(!(index>=0 && index < tamanho)){
             throw new IllegalAccessException("Posição inválida!");
         }
     }
