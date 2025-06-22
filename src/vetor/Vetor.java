@@ -46,7 +46,7 @@ public class Vetor<T> {
     }
 
     private void verificarValidadePosicao(int index) throws IndexOutOfBoundsException {
-        if(!(index>=0 || index < tamanho)){
+        if (index < 0 || index > tamanho) {
             throw new IndexOutOfBoundsException("Posição inválida!");
         }
     }
