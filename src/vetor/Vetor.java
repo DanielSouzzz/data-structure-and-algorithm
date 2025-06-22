@@ -25,8 +25,8 @@ public class Vetor<T> {
 
     // adiciona um elemento em qualquer posicao da lista
     public boolean adicionar(int index, T elemento) throws IndexOutOfBoundsException {
+        verificarValidadePosicaoParaAdicionar(index);
         aumentarCapacidade();
-        verificarValidadePosicao(index);
         for (int i = this.tamanho - 1; i>= index; i--){
             this.elementos[i+1] = this.elementos[i];
         }
@@ -45,7 +45,7 @@ public class Vetor<T> {
         }
     }
 
-    private void verificarValidadePosicao(int index) throws IndexOutOfBoundsException {
+    private void verificarValidadePosicaoParaAdicionar(int index) {
         if (index < 0 || index > tamanho) {
             throw new IndexOutOfBoundsException("Posição inválida!");
         }
