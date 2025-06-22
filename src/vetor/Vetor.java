@@ -21,8 +21,7 @@ public class Vetor<T> {
         } else {
             return false;
         }
-
-}
+    }
 
     private void aumentarCapacidade() {
         if (this.tamanho >= this.elementos.length){
@@ -31,6 +30,12 @@ public class Vetor<T> {
                 newElementos[i] = this.elementos[i];
             }
             this.elementos = newElementos;
+        }
+    }
+
+    private void verificarValidadePosicao(int posicao) throws IllegalAccessException {
+        if(!(posicao>=0 && posicao < tamanho)){
+            throw new IllegalAccessException("Posição inválida!");
         }
     }
 
