@@ -1,5 +1,7 @@
 package vetor;
 
+import java.util.Arrays;
+
 // declara uma classe genérica com o tipo T, que permite qualquer tipo de dado seja armazenado
 public class Vetor<T> {
     private T[] elementos;
@@ -35,6 +37,20 @@ public class Vetor<T> {
         return true;
     }
 
+    public boolean remover(T elemento) {
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i] == elemento) {
+                for (int j = i; j < this.tamanho - 1; j++){
+                    this.elementos[j] = this.elementos[j+1];
+                }
+                this.elementos[this.tamanho - 1]= null;
+                this.tamanho--;
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void aumentarCapacidade() {
         if (this.tamanho >= this.elementos.length){
             T[] newElementos = (T[]) new Object[this.elementos.length * 2];
@@ -51,4 +67,11 @@ public class Vetor<T> {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vetor{" +
+                "elementos=" + Arrays.toString(elementos) +
+                ", tamanho=" + tamanho +
+                '}';
+    }
 }
