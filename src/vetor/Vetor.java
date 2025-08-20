@@ -51,6 +51,15 @@ public class Vetor<T> {
         return false;
     }
 
+    public int buscar(T elemento){
+        for (int i=0; i < this.elementos.length; i++){
+            if (this.elementos[i].equals(elemento)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     private void aumentarCapacidade() {
         if (this.tamanho >= this.elementos.length){
             T[] newElementos = (T[]) new Object[this.elementos.length * 2];

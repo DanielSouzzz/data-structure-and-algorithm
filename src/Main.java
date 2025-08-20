@@ -11,10 +11,6 @@ public class Main {
         vetor.adicionar("D");
         vetor.adicionar("E");
 
-        System.out.println("Vetor atual: "+vetor);
-
-        vetor.remover("B");
-
-        System.out.println("Vetor após remover: "+vetor);
+        System.out.println("teste: "+ vetor.buscar("Y"));
     }
 }
