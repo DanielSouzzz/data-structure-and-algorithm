@@ -24,7 +24,7 @@ Esse projeto é **educacional**, focado no **entendimento dos conceitos** por tr
 ## 🚀 Como executar
 
 ```bash
-git clone https://github.com/seu-usuario/data-structure-and-algorithm.git
+git clone https://github.com/DanielSouzzz/data-structure-and-algorithm.git
 cd data-structure-and-algorithm
 javac MinhaArrayList.java
 java MinhaArrayList
