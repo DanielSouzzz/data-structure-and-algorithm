@@ -1,6 +1,6 @@
-# data-structure-and-algorithm
+# Custom ArrayList Java
 
-Este repositório faz parte das atividades da disciplina de **Java** no curso de **Engenharia de Software**. O objetivo é estudar estruturas de dados e algoritmos na prática, recriando alguns dos principais métodos da classe `ArrayList` do Java.
+Este repositório faz parte das atividades da disciplina de **data structure and algorithm** no curso de **Engenharia de Software**. O objetivo é estudar estruturas de dados e algoritmos na prática, recriando alguns dos principais métodos da classe `ArrayList` do Java.
 
 ## 💡 Sobre o projeto
 
